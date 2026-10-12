@@ -30,7 +30,7 @@ async function loadSeoulMask(){
 }
 loadSeoulMask();
 const exhibitionSnapshotDate='2026-10-12';
-const normalizeSpaceName=name=>name.replace(/\\s*\\([^)]*\\)/g,'').replace(/\\s+/g,'').toLowerCase();
+const normalizeSpaceName=name=>name.replace(/\s*\([^)]*\)/g,'').replace(/\s+/g,'').toLowerCase();
 const inactiveSpaceNames=new Set(["성북구립미술관","실린더two","탕컨템포러리아트서울","대림미술관","프로젝트스페이스사루비아","foundryseoul","aod뮤지엄","통의동보안여관","p21","oci미술관","뮤지엄헤드","핌서울","팩토리2","wwnn","서리풀청년아트갤러리","초이앤초이갤러리","아르코미술관","송은","실린더one","대안공간루프","퐁피두센터한화","드로잉룸","pibi갤러리","상히읗","성곡미술관","갤러리바톤","아트선재센터","가나아트센터","프라이머리프랙티스","pkm갤러리","바라캇컨템포러리"]);
 const unknownSpaceNames=new Set(["팩션","래빗앤타이거","pco","스페이스톤","탈영역우정국","에이라운지","더윌로","토탈미술관","예술공간의식주","흥인갤러리","온수공간","그블루갤러리","안팎스페이스","g갤러리"]);
 function exhibitionStatus(name){const n=normalizeSpaceName(name);return inactiveSpaceNames.has(n)?'inactive':unknownSpaceNames.has(n)?'unknown':'active'}
